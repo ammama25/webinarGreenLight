@@ -41,11 +41,10 @@ ActiveRecord::Schema.define(version: 20190206210049) do
     t.string   "image"
     t.string   "password_digest"
     t.boolean  "accepted_terms",    default: false
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.boolean  "email_verified",    default: false
     t.string   "language",          default: "default"
-    t.string   "role",              default: "moderator"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.string   "activation_digest"
