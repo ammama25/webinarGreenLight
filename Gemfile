@@ -73,6 +73,7 @@ gem "health_check"
 group :production do
   # Use a postgres database in production.
   gem 'pg', '~> 0.18'
+  gem 'dotenv-rails'
 end
 
 group :development, :test do
