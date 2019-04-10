@@ -94,6 +94,7 @@ en:
     en: English
     es: Spanish
     fr: French
+    fa: Persian
     pt-br: Portuguese (Brazil)
     ru: Russian
   ldap_error: Unable to connect to the LDAP server. Please check your LDAP configuration in the env file and ensure your server is running.

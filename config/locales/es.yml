@@ -77,6 +77,7 @@ es:
     en: Inglés
     es: Español
     fr: Francés
+    fa: Persian
     pt-br: Portugués (Brasil)
   ldap_error: No se puede conectar al servidor LDAP. Compruebe la configuración de LDAP en el archivo "env" y asegúrate de que tu servidor está ejecutándose.
   login: Ingresar
