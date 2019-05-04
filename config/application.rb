@@ -48,8 +48,10 @@ module Greenlight
     config.gl_callback_url = ENV["GL_CALLBACK_URL"]
 
     # Default credentials (test-install.blindsidenetworks.com/bigbluebutton).
-    config.bigbluebutton_endpoint_default = "http://test-install.blindsidenetworks.com/bigbluebutton/"
-    config.bigbluebutton_secret_default = "8cd8ef52e8e101574e400365b55e11a6"
+    #config.bigbluebutton_endpoint_default = "http://test-install.blindsidenetworks.com/bigbluebutton/"
+    #config.bigbluebutton_secret_default = "8cd8ef52e8e101574e400365b55e11a6"
+    config.bigbluebutton_endpoint_default= "https://webinar.ut.ac.ir/bigbluebutton/"
+    config.bigbluebutton_secret_default= "355071e21ba1bf56df6aacf9d367a237"
 
     # Use standalone BigBlueButton server.
     config.bigbluebutton_endpoint = ENV["BIGBLUEBUTTON_ENDPOINT"] || config.bigbluebutton_endpoint_default
