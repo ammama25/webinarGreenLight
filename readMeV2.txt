@@ -1,0 +1,1 @@
+signup on/of ------> application.rb .......... "config.allow_user_signup"
