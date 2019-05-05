@@ -5,9 +5,10 @@ Rails.application.config.providers = []
 
 # Set which providers are configured.
 Rails.application.config.omniauth_bn_launcher = Rails.configuration.loadbalanced_configuration
-Rails.application.config.omniauth_ldap = ENV['LDAP_SERVER'].present? && ENV['LDAP_UID'].present? &&
-                                         ENV['LDAP_BASE'].present? && ENV['LDAP_BIND_DN'].present? &&
-                                         ENV['LDAP_PASSWORD'].present?
+#Rails.application.config.omniauth_ldap = ENV['LDAP_SERVER'].present? && ENV['LDAP_UID'].present? &&
+#                                         ENV['LDAP_BASE'].present? && ENV['LDAP_BIND_DN'].present? &&
+#                                         ENV['LDAP_PASSWORD'].present?
+Rails.application.config.omniauth_ldap = true
 Rails.application.config.omniauth_twitter = ENV['TWITTER_ID'].present? && ENV['TWITTER_SECRET'].present?
 Rails.application.config.omniauth_google = ENV['GOOGLE_OAUTH2_ID'].present? && ENV['GOOGLE_OAUTH2_SECRET'].present?
 Rails.application.config.omniauth_microsoft_office365 = ENV['OFFICE365_KEY'].present? &&
@@ -36,11 +37,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     Rails.application.config.providers << :ldap
 
     provider :ldap,
-      host: ENV['LDAP_SERVER'],
-      port: ENV['LDAP_PORT'] || '389',
+      host: "auth4.ut.ac.ir",
+      port: '8443' || '389',
       method: ENV['LDAP_METHOD'].blank? ? :plain : ENV['LDAP_METHOD'].to_sym,
       allow_username_or_email_login: true,
-      uid: ENV['LDAP_UID'],
+      uid: 'utid',
       base: ENV['LDAP_BASE'],
       bind_dn: ENV['LDAP_BIND_DN'],
       password: ENV['LDAP_PASSWORD']
