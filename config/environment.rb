@@ -31,4 +31,7 @@ CASClient::Frameworks::Rails::Filter.configure(
   :logout_url    => "https://auth4.ut.ac.ir:8443/cas/logout",
   :validate_url  => "https://auth4.ut.ac.ir:8443/cas/p3/serviceValidate",
   :enable_single_sign_out => true,
+  :service_url => "https://webinar.ut.ac.ir/b",
+  :username_session_key => :utid
+  #:extra_attributes_session_key => :cas_extra_attributes
 )
