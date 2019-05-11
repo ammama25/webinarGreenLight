@@ -8,7 +8,7 @@ Rails.application.config.omniauth_bn_launcher = Rails.configuration.loadbalanced
 #Rails.application.config.omniauth_ldap = ENV['LDAP_SERVER'].present? && ENV['LDAP_UID'].present? &&
 #                                         ENV['LDAP_BASE'].present? && ENV['LDAP_BIND_DN'].present? &&
 #                                         ENV['LDAP_PASSWORD'].present?
-Rails.application.config.omniauth_ldap = true
+Rails.application.config.omniauth_ldap = false
 Rails.application.config.omniauth_twitter = ENV['TWITTER_ID'].present? && ENV['TWITTER_SECRET'].present?
 Rails.application.config.omniauth_google = ENV['GOOGLE_OAUTH2_ID'].present? && ENV['GOOGLE_OAUTH2_SECRET'].present?
 Rails.application.config.omniauth_microsoft_office365 = ENV['OFFICE365_KEY'].present? &&
@@ -43,7 +43,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       allow_username_or_email_login: true,
       uid: 'utid',
       base: 'dc=ut,dc=ac,dc=ir',
-      bind_dn: ENV['LDAP_BIND_DN'],
+      bind_dn: 'cn=admin,cn=ut,cn=ac,cn=ir',
       password: ENV['LDAP_PASSWORD']
   else
     if Rails.configuration.omniauth_twitter

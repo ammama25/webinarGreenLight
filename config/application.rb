@@ -23,9 +23,9 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
 module Greenlight
   class Application < Rails::Application
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -85,7 +85,7 @@ module Greenlight
     config.enable_email_verification = (ENV['ALLOW_MAIL_NOTIFICATIONS'] == "true")
 
     # Determine if GreenLight should allow non-omniauth signup/login.
-    config.allow_user_signup = true
+    config.allow_user_signup = false
 
     # Configure custom banner message.
     config.banner_message = ENV['BANNER_MESSAGE']

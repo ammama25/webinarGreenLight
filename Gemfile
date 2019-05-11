@@ -50,6 +50,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-microsoft-office365', '~> 0.0.7'
 gem 'omniauth-ldap'
 gem 'omniauth-bn-launcher', '~> 0.1.0'
+gem 'rubycas-client'
 
 # BigBlueButton API wrapper.
 gem 'bigbluebutton-api-ruby'
