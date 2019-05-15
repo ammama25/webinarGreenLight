@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
 
   # POST /users/login
   def create
+    before_filter CASClient::Frameworks::Rails::Filter
+
     admin = User.find_by(email: session_params[:email])
     if admin&.has_role? :super_admin
       user = admin
