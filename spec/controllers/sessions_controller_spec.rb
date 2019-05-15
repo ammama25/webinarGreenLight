@@ -173,6 +173,17 @@ describe SessionsController, type: :controller do
         },
       )
 
+      OmniAuth.config.mock_auth[:cas] = OmniAuth::AuthHash.new(
+        provider: "cas",
+        uid: "utid",
+        info: {
+          email: "user@ut.ac.ir",
+          name: "givenName",
+          nickname: "user",
+          image: "example.png",
+        },
+      )
+
       OmniAuth.config.mock_auth[:bn_launcher] = OmniAuth::AuthHash.new(
         provider: "bn_launcher",
         uid: "bn-launcher-user",
@@ -201,6 +212,16 @@ describe SessionsController, type: :controller do
         expect(@request.session[:user_id]).to eql(u.id)
       end
 
+      # it "should create and login user with omniauth cas" do
+      #   request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:cas]
+      #   get :omniauth, params: { provider: :cas }
+
+      #   u = User.last
+      #   expect(u.provider).to eql("cas")
+      #   expect(u.email).to eql("user@ut.ac.ir")
+      #   expect(@request.session[:user_id]).to eql(u.id)
+      # end
+
       it "should create and login user with omniauth bn launcher" do
         request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:bn_launcher]
         get :omniauth, params: { provider: 'bn_launcher' }
@@ -223,6 +244,12 @@ describe SessionsController, type: :controller do
 
         expect(response).to redirect_to(root_path)
       end
+
+      # it "should not create session without omniauth env set for cas" do
+      #   get :omniauth, params: { provider: 'cas' }
+
+      #   expect(response).to redirect_to(root_path)
+      # end
     end
 
     it "should not create session without omniauth env set for bn_launcher" do

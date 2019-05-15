@@ -154,6 +154,10 @@ GEM
     omniauth-bn-launcher (0.1.0)
       omniauth (~> 1.3, >= 1.3.2)
       omniauth-oauth2 (= 1.5.0)
+    omniauth-cas (1.1.1)
+      addressable (~> 2.3)
+      nokogiri (~> 1.5)
+      omniauth (~> 1.2)
     omniauth-google-oauth2 (0.5.3)
       jwt (>= 1.5)
       omniauth (>= 1.1.1)
@@ -353,6 +357,7 @@ DEPENDENCIES
   mini_racer
   omniauth
   omniauth-bn-launcher (~> 0.1.0)
+  omniauth-cas
   omniauth-google-oauth2
   omniauth-ldap
   omniauth-microsoft-office365 (~> 0.0.7)
@@ -382,4 +387,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.17.1
+   1.17.3

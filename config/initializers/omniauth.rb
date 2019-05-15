@@ -5,13 +5,15 @@ Rails.application.config.providers = []
 
 # Set which providers are configured.
 Rails.application.config.omniauth_bn_launcher = Rails.configuration.loadbalanced_configuration
-Rails.application.config.omniauth_ldap = ENV['LDAP_SERVER'].present? && ENV['LDAP_UID'].present? &&
-                                         ENV['LDAP_BASE'].present? && ENV['LDAP_BIND_DN'].present? &&
-                                         ENV['LDAP_PASSWORD'].present?
+# Rails.application.config.omniauth_ldap = ENV['LDAP_SERVER'].present? && ENV['LDAP_UID'].present? &&
+#                                          ENV['LDAP_BASE'].present? && ENV['LDAP_BIND_DN'].present? &&
+#                                          ENV['LDAP_PASSWORD'].present?
+Rails.application.config.omniauth_ldap = false
 Rails.application.config.omniauth_twitter = ENV['TWITTER_ID'].present? && ENV['TWITTER_SECRET'].present?
 Rails.application.config.omniauth_google = ENV['GOOGLE_OAUTH2_ID'].present? && ENV['GOOGLE_OAUTH2_SECRET'].present?
 Rails.application.config.omniauth_microsoft_office365 = ENV['OFFICE365_KEY'].present? &&
                                                         ENV['OFFICE365_SECRET'].present?
+Rails.application.config.omniauth_cas = true
 
 # If LDAP is enabled, override and disable allow_user_signup.
 Rails.application.config.allow_user_signup = false if Rails.application.config.omniauth_ldap
@@ -58,6 +60,18 @@ Rails.application.config.middleware.use OmniAuth::Builder do
         access_type: 'online',
         name: 'google',
         setup: SETUP_PROC
+    end
+    if Rails.configuration.omniauth_cas
+      Rails.application.config.providers << :cas
+
+      provider :cas,
+        host: 'auth4.ut.ac.ir',
+        port: '8443',
+        login_url: '/cas/login',
+        logout_url: '/cas/logout',
+        ssl: true,
+        disable_ssl_verification: true,
+        service_validate_url: '/cas/p3/serviceValidate'
     end
     if Rails.configuration.omniauth_microsoft_office365
       Rails.application.config.providers << :microsoft_office365
