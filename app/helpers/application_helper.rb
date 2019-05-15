@@ -39,14 +39,6 @@ module ApplicationHelper
     "#{Rails.configuration.relative_url_root}/auth/#{provider}"
   end
 
-  def cas_login_url
-    CASClient::Frameworks::Rails::Filter.login_url(self)
-  end
-
-  def cas_logout_url
-    CASClient::Frameworks::Rails::Filter.logout(self)
-  end
-
   # Determine if Greenlight is configured to allow user signups.
   def allow_user_signup?
     Rails.configuration.allow_user_signup

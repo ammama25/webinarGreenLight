@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ThemingHelper
 
-  # before_filter CASClient::Frameworks::Rails::GatewayFilter, :only => :"main/index"
-
-  # before_filter CASClient::Frameworks::Rails::Filter, :except => :"main/index"
-
   before_action :migration_error?
   before_action :set_locale
   before_action :check_admin_password

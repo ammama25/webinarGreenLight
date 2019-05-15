@@ -18,7 +18,6 @@
 
 class RoomsController < ApplicationController
   include RecordingsHelper
-  before_filter CASClient::Frameworks::Rails::Filter
 
   before_action :validate_accepted_terms, unless: -> { !Rails.configuration.terms }
   before_action :validate_verified_email, except: [:show, :join],
