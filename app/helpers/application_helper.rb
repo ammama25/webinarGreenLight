@@ -44,10 +44,6 @@ module ApplicationHelper
     Rails.configuration.allow_user_signup
   end
 
-  def cas_user_signin?
-    Rails.configuration.cas_user_signin
-  end
-
   # Determines if the BigBlueButton endpoint is the default.
   def bigbluebutton_endpoint_default?
     Rails.configuration.bigbluebutton_endpoint_default == Rails.configuration.bigbluebutton_endpoint
