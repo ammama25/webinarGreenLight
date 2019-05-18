@@ -1,0 +1,323 @@
+# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+#
+# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+#
+# This program is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free Software
+# Foundation; either version 3.0 of the License, or (at your option) any later
+# version.
+#
+# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License along
+# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+
+# Persian (fa) locale
+
+
+fa:
+  activerecord:
+    attributes:
+      user:
+        accepted_terms: "قوانین و شرایط"
+  administrator:
+    site_settings:
+      branding:
+        change: تغییر تصویر
+        info: تغییر تصویر برند گوشه سمت چپ
+        placeholder: url تصویر
+        title: تصویر برند
+      color:
+        info: رنگ اصلی سایت را تغییر دهید
+        title: رنگ اصلی
+      subtitle: شخصی سازی سایت
+      title: تنظیمات سایت
+    flash:
+      banned: .کاربر با موفقیت مسدود شده است
+      unbanned: .کاربر با موفقیت از حالت مسدودی خارج شد
+      delete: .کاربر با موفقیت حذف شد
+      delete_fail: .در حذف کردن کاربر خطا رخ داد
+      demoted: .کاربر با موفقیت تنزل درجه پیدا کرد
+      promoted: .کاربر با موفقیت ترفیع گرفت
+      unauthorized: .شما اجازه ندارید این تغییرات را روی کاربر اعمال کنید
+    title: تنظیمات سازمانی
+    users:
+      edit:
+        title: .اطلاعات کاربر را تغییر دهید
+      settings:
+        ban: مسدود کردن
+        delete: حذف
+        demote: تنزل درجه
+        edit: تغییر
+        promote: ارتقا به ادمینی
+        unban: خروج از مسدودیت
+      table:
+        authenticator: تایید کننده
+        created: .ایجاد شده است
+        name: نام
+        not_found: .کاربری برای جست و جوی شما پیدا نشد
+        no_users: .کاربری پیدا نشد
+        role: نقش
+        uid: شناسه کاربر
+        username: نام کاربری
+      title: مدیریت کاربران
+  bigbluebutton: webinar
+  bigbluebutton_exception: ! مشکلی در برگزاری جلسه پیش آمده است
+  cancel: لغو
+  cookies:
+    cookie_info:  کوکی ها به ما کمک میکنند که به شما سرویس بدهیم. در ازای استفاده از سرویس های ما حاضر به استفاده ما از کوکی ها هستید؟
+    cookie_button: .موافقم
+  copy: کپی
+  default_admin: .شما هنوز از رمز عبور پیشفرض برای این اکانت استفاده میکنید. لطفا <a href="%{edit_link}">اینجا</a> را کلیک کنید تا آنرا تغییر دهید
+  delete: حذف
+  delivery_error: .هنگام ارسال ایمیل خطایی رخ داد. لطفا به یک ادمین اطلاع دهید
+  docs: مستندات
+  email: پست الکترونیک
+  email_sent: Your %{email_type} email has been sent! (Please check your Spam folder if you haven't received it)
+  enter_your_name: ! نام خود را وارد کنید  
+  errors:
+    internal:
+      message: .متاسفانه به نظر میرسد مشکلی از طرف ما وجود دارد
+      help: .مشکل ثبت خواهد شد و ما آن را بررسی خواهیم کرد
+    migration_error:
+      contact_admin: .اگر شما مدیر سیستم نیستید با یکی از مدیران تماس بگیرید
+      continue: .میخواهم از ورژن ۱.۰. استفاده کنم
+      notice: >
+        گرین لایت با یک خطای پایگاه داده مواجه شده است.
+        این اتفاق ممکن است به این دلیل باشد که گرینلایت را به ورژن ۲.۰. به روز رسانی نکرده باشید.
+      upgrade: .چطور میتوانم به ورژن ۲.۰. به روز رسانی کنم
+      version: .ما یک ورژن جدید گرینلایت را منتشر کرده ایم اما پایگاه داده شما با آن همخوانی ندارد
+     
+    messages:
+      blank: .نمیتواند خالی باشد
+    not_found:
+      message: .آخ! ما نمیتوانیم آن را پیدا کنیم
+      help: .ممکن است که حذف شده باشد
+    title: مشکلات
+    unauthorized:
+      message: .شما دسترسی این برنامه را ندارید
+      help: .اگر فکر میکنید این امر اشتباه است به ادمین سیستم اطلاع دهید
+    unprocessable:
+      message: .درخواست قابل پردازش نیست
+      help: .متاسفانه این درخواست معتبر نیست
+  expired_reset_token: .لینک تغییر رمز عبور منقضی شده است
+  features:
+    title: قابلیت ها
+    rooms: اتاق های شخصی
+    recordings: مدیریت جلسات ضبط شده
+    designs: طراحی های شخصی
+    authentication: احراز هویت
+  footer:
+    powered_by: "توسعه یافته توسط مرکز یادگیری الکترونیکی دانشگاه تهران"
+
+  header:
+    all_recordings: جلسات ضبط شده
+    dropdown:
+      account_settings: تنظیمات
+      help: راهنما
+      home: خانه
+      settings: پروفایل
+      signout: خروج
+  home_room: اتاق اصلی
+  info_update_success: اطلاعات با موفقیت به روز رسانی شد.
+  invalid_credentials: ورود به سیستم به دلیل ورود اطلاعات غلط به شکست انجامید. آیا اطلاعات را درست وارد کردید
+  invite_message: "برای اینکه افراد را به این جلسه دعوت کنید از لینک زیر استفاده کنید:"
+
+  forgot_password:
+    subtitle: فراموشی رمز عبور
+    email: ایمیل
+    submit: ثبت
+  go_back: بازگشت
+  greenlight: وبینار
+  info_update_success: .اطلاعات با موفقیت به روز رسانی شد
+  invalid_user: ورود موفقیت آمیز نبود. از ایمیل وارد شده اطمینان دارید؟
+  invalid_credentials: ورود موفقیت آمیز نبود. از رمز عبور وارد شده اطمینان دارید؟
+  invalid_login_method: .ورود موفقیت آمیز نبود
+  invite_message: :برای اینکه افراد دیگر بتوانند به جلسه ملحق شوند این لینک را برایشان بفرستید 
+  # javascript:
+  #   room:
+  #     mailer:
+  #       subject: .شما دعوت شدید تا این محتوی ضبط شده را ببینید
+  #       body: :برای اینکه محتوی ضبط شده را ببینید روی لینک زیر کلیک کنید
+  #       autogenerated: این ایمیل توسط وبینار ایجاد شده است
+  #       footer: توسعه یافته توسط مرکز یادگیری الکترونیکی دانشگاه تهران
+  landing:
+    about: " .این سامانه جهت برگزاری جلسات آنلاین راه اندازی شده است"
+    welcome: .به وبینار خوش آمدید
+    video: ویدیوی آموزشی استفاده از وبینار
+    upgrade: .چطور میتوانم سیستم را به ورژن ۲.۰. به روز رسانی کنم
+    version: .ما یک ورژن جدید تر آماده کرده ایم اما پایگاه داده شما باید به روز رسانی شود
+  language_name: فارسی
+  language_default: پیشفرض
+  login_title: .وارد حساب کاربری خود شوید
+  mailer:
+    user:
+      password_reset:
+        title: 'Password reset'
+        welcome: It seems like you forgot your password for %{bigbluebutton}
+        message: 'If this is true, please click the link below to reset your password:'
+        reset_link: Reset Password
+        expire: This link will expire in two hours.
+        ignore: You can safely ignore this email if you did not request a password reset.
+      verify_email:
+        welcome: Welcome to your personal space, %{name}!
+        success: Leveraging %{bigbluebutton}, you can create your own rooms to host sessions and collaborate with others.
+        username: Your username is %{email}.
+        verify: To verify your account, just click the button below.
+        verify_text: 'To verify your account, just follow this link: %{url}'
+        verify_link: Verify Account
+        thanks: Thanks for joining and have a great day!
+  max_concurrent: The maximum number of concurrent sessions allowed has been reached!
+
+  ldap_error: نمیتوانیم به سرور احراز هویت متصل شویم. لطفا تنظیمات وارد شده در فایل env را بررسی کنید.
+  login: ورود
+  modal:
+    create_room:
+      auto_join: .به صورت خودکار مرا وارد اتاق کن
+      free_delete: .شما میتوانید هر زمان که خواستید این اتاق را حذف کنید
+      name_placeholder: ...یک نام برای اتاق انتخاب کنید
+      not_blank: .نام اتاق نمیتواند خالی باشد
+      title: .یک اتاق جدید ایجاد کنید
+    delete_account:
+      confirm: آیا واقعا میخواهید حساب کاربری خود را حذف کنید؟
+      delete: .مطمينم.حساب کاربریم را حذف کنید
+      keep: .میخواهم حساب کاربریم را نگه دارم
+      warning: .این تصمیم غیر قابل بازگشت است. شما دیگر قادر نخواهید بود که به داده هایتان دسترسی داشته باشید
+    delete_room:
+      confirm: "آیا واقعا میخواهید اتاق %{room} را حذف کنید"
+      delete: مطمينم. میخواهم اتاق را حذف کنم
+      keep: "میخواهم اتاق را نگه دارم"
+      warning: شما قادر نخواهید بود تا مجددا به اطلاعات این اتاق دسترسی پیدا کنید
+    login:
+      or: یا
+      with: "از طریق%{provider}"
+      forgot_password: رمز عبورتان را فراموش کرده اید؟
+    rename_recording:
+    room_settings:
+      title: تنظیمات اتاق
+      update: به روز رسانی اتاق
+      client: نوع سرویس گیرنده را مشخص کنید
+      mute: کاربران در حالت سکوت وارد جلسه شوند
+      default: Default
+      html: HTML5
+      flash: Flash
+      footer_text: .میتوانید هر زمان خواستید تنظیمات اتاق را تغییر دهید
+    rename_room:
+      name_placeholder: ...یک نام برای اتاق انتخاب کنید
+  name_update_success: .نام اتاق با موفقیت تغییر کرد
+  no_user_email_exists: .کاربری با این ایمیل وجود ندارد. اطمینان پیدا کنید که درست تایپ کرده اید
+  omniauth_error: .هنگام ورود به سیستم خطایی رخ داد. لطفا به یک ادمین اطلاع بدهید
+  password: رمز عبور
+  password_empty_notice: .رمز عبور نمیتواند خالی باشد
+  password_reset_success: .رمز عبور تغییر یافت
+  password_different_notice: .تایید رمز عبور با خود آن برابر نیست
+  provider:
+    cas: cas
+    google: Google
+    microsoft_office365: Office 365
+    twitter: Twitter
+
+  rename: تغییر نام
+  reset_password:
+    subtitle: تغییر رمز عبور
+    password: رمز عبور جدید
+    confirm: تایید رمز عبور جدید
+    update: به روز رسانی رمز عبور
+  roles:
+    administrator: ادمین
+    banned: مسدود شده
+    super_admin: ادمین اصلی
+    user: کاربر
+
+  recording:
+    all_recordings: همه جلسات ضبط شده
+    email: ایمیل
+    no_recordings: "این اتاق هیچ محتوی ضبط شده ای ندارد"
+    no_user_recordings: شما هنوز محتوی ضبط شده ای ندارید
+    no_matched_recordings: .هیچ محتوی ضبط شده ای برای جست و جوی شما پیدا نشد
+    recorded_on: "ضبط شده در تاریخ %{date}"
+    table:
+      name: نام
+      thumbnails: پیش نمایش
+      length: طول
+      users: کاربران
+      visibility: قابلیت دیدن
+      formats: فرمت
+    visibility:
+      public: عمومی
+      unlisted: لیست نشده 
+    format:
+      presentation: Presentation
+
+  room:
+    create_room: .یک اتاق ایجاد کنید
+    create_room_error: .خطایی هنگام ایجاد کردن اتاق رخ داد
+    create_room_success: .اتاق با موفقیت ایجاد شد
+    invited: شما دعوت شدید 
+    invite_participants: دعوت مشارکت کنندگان
+    settings: ویژگی های اتاق
+    join: ورود به اتاق
+    last_session: "آخرین جلسه در %{session}"
+    owner: مالك
+    no_sessions: این اتاق هنوز جلسه ای نداشته است
+    recordings: ضبط
+    sessions: جلسات
+    settings: تنظیمات
+    start: آغاز
+    unavailable: .این اتاق در حال حاضر در دسترس نیست زیرا ایمیل سازنده تایید نشده است
+    update_settings_error: .خطایی هنگام به روز رسانی تنظیمات اتاق رخ داد
+    update_settings_success: .تنظیمات اتاق با موفقیت به روزرسانی شد
+    wait:
+      message: .جلسه هنوز آغاز نشده است
+      auto: .هر زمان جلسه آغاز شود شما به صورت خودکار وارد آن خواهید شد
+  settings:
+    account:
+      fullname: نام کامل
+      provider: وارد شده از طریق
+      language: زبان
+      image: تصویر
+      image_url: URL تصویر پروفایل
+      subtitle: اطلاعات حساب کاربری خود را به روز رسانی کنید
+      title: مشخصات کاربری
+    delete:
+      button: بله میخواهم حساب کاربریم را حذف کنم
+      disclaimer: این تصمیم بازگشت پذیر نخواهد بود. همه اطلاعات مربوط به تنظیمات اتاق ها و محتوی های ضبط شده شما حذف خواهند شد
+      subtitle: "حساب کاربری شما به صورت کامل حذف خواهد شد"
+      title: حذف حساب کاربری
+    design:
+      not_supported: شخصی سازی فعلا پیاده سازی نشده است
+      subtitle: شخصی سازی گرینلایت
+      title: شخصی سازی
+    password:
+      confirmation: تایید رمز عبور
+      new: رمز عبور جدید
+      old: رمز عبور قدیمی
+      subtitle: غير كلمة السر الخاصة بك
+      title: رمز عبور
+    title: تنظیمات
+  search: جست و جو
+  
+  signup:
+    password_confirm: تایید رمز عبور
+    subtitle: یک حساب کاربری بسازید
+    title: ایجاد حساب
+    with: "ایجاد حساب از طریق %{provider}"
+  terms:
+    accept: میپذیرم
+    accept_existing: من قوانین و شرایط را قبول دارم
+    title: شرایط و قوانین
+  test_install: >
+    ما از یک سرور تستی استفاده میکنیم شما باید آنرا با سرور خودتان جایگزین کنید.
+  update: به روز رسانی
+  verify:
+    accept: تایید
+    activated: ! اکانت فعال شد
+    already_verified: .اکانت در حال حاضر فعال شده است
+    invalid: .لینک فعال سازی نامعتبر است
+    not_verified: .حساب کاربری شما در حال حاضر فعال نشده است
+    resend: ارسال مجدد ایمیل فعال سازی
+    signin: .لطفا وارد شوید تا به حساب کاربری خود دسترسی داشته باشید
+    title: .ایمیل خود را فعال کنید
+    verification: فعال سازی
