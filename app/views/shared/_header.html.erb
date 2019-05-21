@@ -72,8 +72,8 @@
           </div>
         <% else %>
           <% allow_greenlight_accounts = allow_greenlight_accounts? %>
-          <%= link_to t("login"), omniauth_login_url(:cas), :class => "btn btn-outline-primary mx-2 sign-in-button" %>
-<!-- 
+          <!-- <%= link_to t("login"), omniauth_login_url(:cas), :class => "btn btn-outline-primary mx-2 sign-in-button" %> -->
+
           <% if Rails.configuration.omniauth_ldap %>
             <%= link_to t("login"), omniauth_login_url(:ldap), :class => "btn btn-outline-primary mx-2 sign-in-button" %>
           <% elsif allow_greenlight_accounts %>
@@ -82,7 +82,7 @@
             <%= link_to t("login"), omniauth_login_url(:bn_launcher), :class => "btn btn-pill btn-outline-primary mx-2 sign-in-button" %>
           <% else %>
             <%= link_to t("login"), signin_path, :class => "btn btn-outline-primary mx-2 sign-in-button" %>
-          <% end %> -->
+          <% end %> 
 
           <% if allow_user_signup? && allow_greenlight_accounts %>
             <%= link_to t("signup.title"), signup_path, :class => "btn btn-outline-primary mx-2 sign-in-button" %>
