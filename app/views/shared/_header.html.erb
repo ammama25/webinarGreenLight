@@ -76,7 +76,7 @@
 
           <% if Rails.configuration.omniauth_ldap %>
             <%= link_to t("login"), omniauth_login_url(:ldap), :class => "btn btn-outline-primary mx-2 sign-in-button" %>
-          <% elsif allow_greenlight_accounts %>
+          <% elsif false %>
             <%= link_to t("login"), omniauth_login_url(:cas), :class => "btn btn-outline-primary mx-2 sign-in-button" %>
           <% elsif Rails.configuration.loadbalanced_configuration %>
             <%= link_to t("login"), omniauth_login_url(:bn_launcher), :class => "btn btn-pill btn-outline-primary mx-2 sign-in-button" %>
