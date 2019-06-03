@@ -41,8 +41,10 @@ Rails.application.routes.draw do
     post '/coloring', to: 'admins#coloring', as: :admin_coloring
     post '/signup', to: 'admins#signup', as: :admin_signup
     get '/edit/:user_uid', to: 'admins#edit_user', as: :admin_edit_user
-    post '/promote/:user_uid', to: 'admins#promote', as: :admin_promote
-    post '/demote/:user_uid', to: 'admins#demote', as: :admin_demote
+    post '/promote_to_admin/:user_uid', to: 'admins#promote_to_admin', as: :admin_promote
+    post '/demote_from_admin/:user_uid', to: 'admins#demote_from_admin', as: :admin_demote
+    post '/promote_to_moderator/:user_uid', to: 'admins#promote_to_moderator', as: :moderator_promote
+    post '/demote_from_moderator/:user_uid', to: 'admins#demote_from_moderator', as: :moderator_demote
     post '/ban/:user_uid', to: 'admins#ban_user', as: :admin_ban
     post '/unban/:user_uid', to: 'admins#unban_user', as: :admin_unban
   end

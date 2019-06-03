@@ -80,6 +80,10 @@
                         <div class="user-role btn btn-sm btn-yellow">
                           <%= t("roles.administrator") %>
                         </div>
+                      <% elsif user.has_role? :moderator %>
+                        <div class="user-role btn btn-sm btn-green">
+                          <%= t("roles.moderator") %>
+                        </div>
                       <% else %>
                         <div class="user-role btn btn-sm btn-gray">
                           <%= t("roles.user") %>
@@ -109,9 +113,16 @@
                                 <%= button_to admin_demote_path(user_uid: user.uid), class: "dropdown-item" do %>
                                   <i class="dropdown-icon fas fa-level-down-alt"></i> <%= t("administrator.users.settings.demote") %>
                                 <% end %>
+                              <% elsif user.has_role? :moderator %>
+                                <%= button_to moderator_demote_path(user_uid: user.uid), class: "dropdown-item" do %>
+                                  <i class="dropdown-icon fas fa-level-down-alt"></i> <%= t("administrator.users.settings.demote_from_moderator") %>
+                                <% end %>
                               <% elsif user.has_role? :user %>
                                 <%= button_to admin_promote_path(user_uid: user.uid), class: "dropdown-item" do %>
                                   <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.promote") %>
+                                <% end %>
+                                <%= button_to moderator_promote_path(user_uid: user.uid), class: "dropdown-item" do %>
+                                  <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.promote_to_moderator") %>
                                 <% end %>
                               <% end %>
                               <%= button_to admin_ban_path(user_uid: user.uid), class: "dropdown-item" do %>

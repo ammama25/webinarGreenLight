@@ -52,13 +52,13 @@ describe AdminsController, type: :controller do
       end
     end
 
-    context "POST #promote" do
+    context "POST #promote_to_admin" do
       it "promotes a user to admin" do
         @request.session[:user_id] = @admin.id
 
         expect(@user.has_role?(:admin)).to eq(false)
 
-        post :promote, params: { user_uid: @user.uid }
+        post :promote_to_admin, params: { user_uid: @user.uid }
 
         expect(@user.has_role?(:admin)).to eq(true)
         expect(flash[:success]).to be_present
@@ -66,14 +66,14 @@ describe AdminsController, type: :controller do
       end
     end
 
-    context "POST #demote" do
+    context "POST #demote_from_admin" do
       it "demotes an admin to user" do
         @request.session[:user_id] = @admin.id
 
         @user.add_role :admin
         expect(@user.has_role?(:admin)).to eq(true)
 
-        post :demote, params: { user_uid: @user.uid }
+        post :demote_from_admin, params: { user_uid: @user.uid }
 
         expect(@user.has_role?(:admin)).to eq(false)
         expect(flash[:success]).to be_present

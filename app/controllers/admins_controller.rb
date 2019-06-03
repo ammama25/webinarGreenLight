@@ -19,8 +19,8 @@
 class AdminsController < ApplicationController
   include Pagy::Backend
   authorize_resource class: false
-  before_action :find_user, only: [:edit_user, :promote, :demote, :ban_user, :unban_user]
-  before_action :verify_admin_of_user, only: [:edit_user, :promote, :demote, :ban_user, :unban_user]
+  before_action :find_user, only: [:edit_user, :promote_to_admin, :promote_to_moderator, :demote_from_admin, :demote_from_moderator, :ban_user, :unban_user]
+  before_action :verify_admin_of_user, only: [:edit_user, :promote_to_admin, :promote_to_moderator, :demote_from_admin, :demote_from_moderator, :ban_user, :unban_user]
   before_action :find_setting, only: [:branding, :coloring]
 
   # GET /admins
@@ -49,13 +49,13 @@ class AdminsController < ApplicationController
   end
 
   # POST /admins/promote/:user_uid
-  def promote
+  def promote_to_admin
     @user.add_role :admin
     redirect_to admins_path, flash: { success: I18n.t("administrator.flash.promoted") }
   end
 
   # POST /admins/demote/:user_uid
-  def demote
+  def demote_from_admin
     @user.remove_role :admin
     redirect_to admins_path, flash: { success: I18n.t("administrator.flash.demoted") }
   end
@@ -82,6 +82,16 @@ class AdminsController < ApplicationController
   def unban_user
     @user.remove_role :denied
     redirect_to admins_path, flash: { success: I18n.t("administrator.flash.unbanned") }
+  end
+
+  def promote_to_moderator
+    @user.add_role :moderator
+    redirect_to admins_path, flash: { success: I18n.t("administrator.flash.promoted") }
+  end
+
+  def demote_from_moderator
+    @user.remove_role :moderator
+    redirect_to admins_path, flash: { success: I18n.t("administrator.flash.demoted") }
   end
 
   private
