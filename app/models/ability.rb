@@ -26,8 +26,10 @@ class Ability
       can :manage, :all
     elsif user.has_role? :admin
       can :manage, :all
-    elsif user.has_role? :user
+    elsif user.has_role? :moderator
       cannot :manage, AdminsController
+    elsif user.has_role? :user
+      cannot :manage, AdminsController, RoomsController
     end
   end
 end

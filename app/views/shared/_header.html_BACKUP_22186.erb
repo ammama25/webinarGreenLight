@@ -53,8 +53,10 @@
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" x-placement="bottom-end">
-              <%= link_to edit_user_path(current_user), class: "dropdown-item"  do %>
-                <i class="dropdown-icon fas fa-id-card mr-3"></i><%= t("header.dropdown.settings") %>
+              <% if current_user.has_role? :moderator %>
+                <%= link_to edit_user_path(current_user), class: "dropdown-item"  do %>
+                  <i class="dropdown-icon fas fa-id-card mr-3"></i><%= t("header.dropdown.settings") %>
+                <% end %>
               <% end %>
               <% if current_user.has_role? :admin %>
                 <%= link_to admins_path, class: "dropdown-item" do %>
