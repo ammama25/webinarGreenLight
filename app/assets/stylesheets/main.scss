@@ -19,6 +19,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url('https://fonts.googleapis.com/css?family=Lalezar&display=swap');
+
+
+
 .responsive-header {
   font-size: 3.3vw;
 }
@@ -29,7 +33,11 @@
 }
 
 .lead {
-  font-size:18px;
+  margin-top: 3%;
+  font-size:16px;
+  direction: rtl;
+  font-family: 'Lalezar', cursive;
+  text-align: right;
 }
 
 .feature-stamp {
@@ -56,6 +64,7 @@
 
 .display-4 {
   font-weight: normal;
+  font-family: 'Lalezar', cursive;
 }
 
 .customBtn {
@@ -156,6 +165,48 @@
   }
 }
 
+.header-brand-img {
+  margin-top: -15px;
+}
+
 .signin-button {
   font-size: 16px;
 }
+
+@media (min-width: 1024px){
+  .landing-image {
+    max-width: 100%; 
+    display: block;
+    grid-area: Hero-figure;
+    position: relative;
+    z-index: 1;
+    margin-top: 3%;
+  }
+}
+
+@media (min-width: 1024px){
+  .landing-row {
+    max-width: 100%;
+    display: grid;
+    grid-column-gap: calc(80px / 2);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "Hero-figure Hero-content";
+    text-align: left;
+    padding-top: 0;
+    position: relative;
+  }
+}
+
+@media (min-width: 1024px){
+  .landing-text {
+    display: block;
+    grid-area: Hero-content;
+    max-width: calc(calc(1200px - 80px) / 2);
+    padding: 3%;
+  }
+}
+
+
+
+
+

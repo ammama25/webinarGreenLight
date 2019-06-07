@@ -80,6 +80,7 @@ a {
 .footer {
   height: $footer-height;
   width: 100%;
+  font-family: 'Lalezar', cursive;
 }
 
 .background {
@@ -158,6 +159,11 @@ input:focus {
     padding-bottom: 21px;
     border-bottom: 1px solid $primary;
   }
+}
+
+.pt-9{
+  background-color: white;
+  display: block;
 }
 
 table {

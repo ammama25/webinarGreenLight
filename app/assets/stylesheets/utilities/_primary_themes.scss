@@ -32,7 +32,7 @@ a {
 .btn-outline-primary {
   border-color: $primary-color !important;
   color: $primary-color !important;
-
+  margin-bottom: 10px;
   &:hover {
     background: $primary-color !important;
     color: white !important;
@@ -60,6 +60,9 @@ a {
   & .header-nav.active {
     color: $primary-color !important;
   }
+  
+  border-bottom: 1px solid rgba(0,40,100,0.12);
+
 }
 
 .dropdown-item {

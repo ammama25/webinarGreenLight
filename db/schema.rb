@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20190326144939) do
     t.string   "name"
     t.string   "uid"
     t.string   "bbb_id"
-    t.integer  "sessions",              default: 0
+    t.integer  "sessions",      default: 0
     t.datetime "last_session"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.string   "room_settings",         default: "{ }"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "room_settings", default: "{ }"
     t.string   "moderator_pw"
     t.string   "attendee_pw"
     t.index ["bbb_id"], name: "index_rooms_on_bbb_id"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20190326144939) do
     t.string   "image"
     t.string   "password_digest"
     t.boolean  "accepted_terms",    default: false
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.boolean  "email_verified",    default: false
     t.string   "language",          default: "default"
     t.string   "reset_digest"

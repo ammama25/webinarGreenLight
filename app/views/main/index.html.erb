@@ -15,17 +15,15 @@
 
 <div class="background">
   <div class="container pt-9 pb-8">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
+    <div class="landing-row">
+      <div class="col-md-12 col-sm-12 text-center landing-text">
         <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <p class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank")).html_safe %></p>
-        <%= link_to "https://youtu.be/Hso8yLzkqj8", target: "_blank" do %>
-          <h4><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
-        <% end %>
+        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about1").html_safe %></h4>
+        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about2").html_safe  %></h4>
+        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about3").html_safe  %></h4>
       </div>
-
+      <%= image_tag("webinar demo phone pc.png", class: "landing-image", alt:"") %>
     </div>
   </div>
 </div>
 
-<%= render "shared/features" %>
