@@ -117,6 +117,8 @@ fa:
     dropdown:
       account_settings: تنظیمات
       help: راهنما
+      support: پشتیبانی
+      contact us: ارتباط با ما
       home: خانه
       settings: پروفایل
       signout: خروج
@@ -221,6 +223,7 @@ fa:
     update: به روز رسانی رمز عبور
   roles:
     administrator: ادمین
+    moderator: کاربر اتاق دار
     banned: مسدود شده
     super_admin: ادمین اصلی
     user: کاربر
