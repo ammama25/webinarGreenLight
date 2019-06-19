@@ -65,7 +65,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       Rails.application.config.providers << :cas
 
       provider :cas,
-        host: 'auth4.ut.ac.ir',
+        host: 'auth1.ut.ac.ir',
         port: '8443',
         login_url: '/cas/login',
         logout_url: '/cas/logout',

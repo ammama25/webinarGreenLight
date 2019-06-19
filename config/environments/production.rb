@@ -60,17 +60,33 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Tell Action Mailer to use smtp server, if configured
-  config.action_mailer.delivery_method = ENV['SMTP_SERVER'].present? ? :smtp : :sendmail
+
+   config.action_mailer.delivery_method = true ? :smtp : :sendmail
+  
 
   ActionMailer::Base.smtp_settings = {
-    address: ENV['SMTP_SERVER'],
-    port: ENV["SMTP_PORT"],
-    domain: ENV['SMTP_DOMAIN'],
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: ENV['SMTP_AUTH'],
-    enable_starttls_auto: ENV['SMTP_STARTTLS_AUTO'],
+    address: 'mail.ut.ac.ir',
+    port: '465',
+    domain: 'ut.ac.ir',
+    user_name: 'noreply.utec',
+    password: '78U$utec',
+    authentication: :plain ,
+    enable_starttls_auto: true,
+    :ssl                    => true,
+    :tls                    => true
   }
+  
+  # config.action_mailer.delivery_method = ENV['SMTP_SERVER'].present? ? :smtp : :sendmail
+
+  # ActionMailer::Base.smtp_settings = {
+  #   address: ENV['SMTP_SERVER'],
+  #   port: ENV["SMTP_PORT"],
+  #   domain: ENV['SMTP_DOMAIN'],
+  #   user_name: ENV['SMTP_USERNAME'],
+  #   password: ENV['SMTP_PASSWORD'],
+  #   authentication: ENV['SMTP_AUTH'],
+  #   enable_starttls_auto: ENV['SMTP_STARTTLS_AUTO'],
+  # }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true

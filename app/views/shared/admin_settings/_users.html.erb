@@ -119,10 +119,10 @@
                                 <% end %>
                               <% elsif user.has_role? :user %>
                                 <%= button_to admin_promote_path(user_uid: user.uid), class: "dropdown-item" do %>
-                                  <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.promote") %>
+                                  <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.admin_promote") %>
                                 <% end %>
                                 <%= button_to moderator_promote_path(user_uid: user.uid), class: "dropdown-item" do %>
-                                  <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.promote_to_moderator") %>
+                                  <i class="dropdown-icon fas fa-level-up-alt"></i> <%= t("administrator.users.settings.moderator_promote") %>
                                 <% end %>
                               <% end %>
                               <%= button_to admin_ban_path(user_uid: user.uid), class: "dropdown-item" do %>

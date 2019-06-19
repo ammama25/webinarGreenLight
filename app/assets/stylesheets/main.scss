@@ -20,7 +20,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('https://fonts.googleapis.com/css?family=Lalezar&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Markazi+Text&display=swap');
 
 
 .responsive-header {
@@ -100,7 +100,7 @@
     font-weight: 600;
     letter-spacing: .21px;
     padding:0 25px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Markazi Text', serif;
   }
 
   .customBtn-image {
@@ -124,7 +124,6 @@
 .customBtn-cas {
   @extend .customBtn;
   background: #4688f1;
-
   .customBtn-image {
     background: #ffffff image-url("cas-logo.png") no-repeat left top;
     background-size: 18px 18px;

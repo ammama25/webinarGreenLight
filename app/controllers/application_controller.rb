@@ -47,12 +47,13 @@ class ApplicationController < ActionController::Base
   end
 
   def update_locale(user)
-    locale = if user && user.language != 'default'
-      user.language
+    if user && user.language != 'default'
+      I18n.locale = user.language
     else
-      http_accept_language.language_region_compatible_from(I18n.available_locales)
+      locale = http_accept_language.language_region_compatible_from(I18n.available_locales)
+      I18n.locale = :fa
     end
-    I18n.locale = locale.tr('-', '_') unless locale.nil?
+     # I18n.locale = locale.tr('-', '_') unless locale.nil?
   end
 
   def meeting_name_limit

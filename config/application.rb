@@ -38,7 +38,7 @@ module Greenlight
     config.i18n.default_locale = :en
 
     config.i18n.available_locales.each do |locale|
-      config.i18n.fallbacks[locale] = [locale, :en]
+      config.i18n.fallbacks[locale] = [:fa, :en]
     end
 
     # Check if a loadbalancer is configured.
@@ -79,10 +79,11 @@ module Greenlight
     end
 
     # Specify the email address that all mail is sent from
-    config.smtp_sender = ENV['SMTP_SENDER'] || "notifications@example.com"
+    # config.smtp_sender = ENV['SMTP_SENDER'] || "notifications@example.com"
+     config.smtp_sender = 'noreply.utec@ut.ac.ir'
 
     # Determine if GreenLight should enable email verification
-    config.enable_email_verification = (ENV['ALLOW_MAIL_NOTIFICATIONS'] == "true")
+    config.enable_email_verification = true
 
     # Determine if GreenLight should allow non-omniauth signup/login.
     config.allow_user_signup = true
@@ -91,7 +92,7 @@ module Greenlight
     config.banner_message = ENV['BANNER_MESSAGE']
 
     # Enable/disable recording thumbnails.
-    config.recording_thumbnails = (ENV['RECORDING_THUMBNAILS'] != "false")
+    config.recording_thumbnails = true
 
     # Configure which settings are available to user on room creation/edit after creation
     config.room_features = ENV['ROOM_FEATURES'] || ""

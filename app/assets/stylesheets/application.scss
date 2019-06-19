@@ -53,6 +53,10 @@ html, body {
   background-color: white;
 }
 
+.body_fa{
+  font-family: 'Markazi Text', serif;
+}
+
 a {
   text-decoration: none !important;
   cursor: pointer;
@@ -172,4 +176,21 @@ table {
       cursor: pointer;
     }
   }
+}
+
+.list_group_fa{
+  direction: rtl;
+  float: right;
+}
+
+.rtl{
+  direction:rtl;
+}
+
+.ltr{
+  direction: ltr;
+}
+
+.setting-icons{
+  margin-left:5px;
 }

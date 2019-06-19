@@ -18,9 +18,16 @@
     <div class="landing-row">
       <div class="col-md-12 col-sm-12 text-center landing-text">
         <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about1").html_safe %></h4>
-        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about2").html_safe  %></h4>
-        <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about3").html_safe  %></h4>
+        <% if current_user && current_user.language != 'fa' %>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 text-left"><%= t("landing.about1").html_safe %></h4>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 text-left"><%= t("landing.about2").html_safe  %></h4>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 text-left"><%= t("landing.about3").html_safe  %></h4>
+        <% else %>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about1").html_safe %></h4>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about2").html_safe  %></h4>
+          <h4 class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about3").html_safe  %></h4>
+        <% end %> 
+            
       </div>
       <%= image_tag("webinar demo phone pc.png", class: "landing-image", alt:"") %>
     </div>

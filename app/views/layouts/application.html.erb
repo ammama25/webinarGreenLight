@@ -18,7 +18,6 @@
   <head>
     <title><%= t("bigbluebutton") %></title>
     <%= csrf_meta_tags %>
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- Global javascript variables and helpers. -->
@@ -55,36 +54,42 @@
         return value ? value : "";
       }
     </script>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/150px-University_of_Tehran_logo.svg.png" sizes="16x16">
   </head>
 
-  <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
-    <%= render "shared/header" %>
 
-    <div class="wrapper">
-      <% if bigbluebutton_endpoint_default? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <i class="fas fa-exclamation-triangle"></i>
-            <p class="d-inline"><%= t("test_install",
-              href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank")
-            ).html_safe %>
+  <% if current_user && current_user.language != 'fa' %>
+    <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
+  <% else %>
+    <body class="app-background body_fa" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
+  <% end %> 
+      <%= render "shared/header" %>
+
+      <div class="wrapper">
+        <% if bigbluebutton_endpoint_default? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class="d-inline"><%= t("test_install",
+                href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank")
+              ).html_safe %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <% unless Rails.configuration.banner_message.blank? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+        <% unless Rails.configuration.banner_message.blank? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <%= render 'shared/flash_messages' unless flash.empty? %>
+        <%= render 'shared/flash_messages' unless flash.empty? %>
 
-      <%= yield %>
-    </div>
+        <%= yield %>
+      </div>
 
-    <%= render "shared/footer" %>
-  </body>
+      <%= render "shared/footer" %>
+    </body>
 </html>

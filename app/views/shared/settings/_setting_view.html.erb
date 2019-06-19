@@ -22,8 +22,12 @@
             <div class="col-7 mt-2">
               <h4><%= setting_title %></h4>
             </div>
-
-            <div class="col-5 float-right">
+            <% if current_user && current_user.language != 'fa' %>
+              <div class="col-5 ">
+            <% else %>
+              <div class="col-5 float-right">
+            <% end %> 
+            
               <div id="search-bar">
                 <div class="input-group">
                   <input id="search-input" type="text" class="form-control" placeholder="<%= t("settings.search") %>..." value="<%= @search %>">
@@ -41,8 +45,13 @@
               </div>
             </div>
           <% else %>
-            <div class="col-12 mt-2">
-              <h4 class="text-primary"><%= setting_title %></h4>
+            <div class="col-12 mt-2 ">
+              <% if current_user && current_user.language != 'fa' %>
+                <h4 class="text-primary "><%= setting_title %></h4>
+              <% else %>
+                <h4 class="text-primary float-right"><%= setting_title %></h4>
+              <% end %> 
+              
             </div>
           <% end %>
         </div>

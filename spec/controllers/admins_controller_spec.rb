@@ -66,6 +66,20 @@ describe AdminsController, type: :controller do
       end
     end
 
+    context "POST #promote_to_moderator" do
+      it "promotes a user to moderator" do
+        @request.session[:user_id] = @admin.id
+
+        expect(@user.has_role?(:admin)).to eq(false)
+
+        post :promote_to_moderator, params: { user_uid: @user.uid }
+
+        expect(@user.has_role?(:moderator)).to eq(true)
+        expect(flash[:success]).to be_present
+        expect(response).to redirect_to(admins_path)
+      end
+    end
+
     context "POST #demote_from_admin" do
       it "demotes an admin to user" do
         @request.session[:user_id] = @admin.id
@@ -76,6 +90,21 @@ describe AdminsController, type: :controller do
         post :demote_from_admin, params: { user_uid: @user.uid }
 
         expect(@user.has_role?(:admin)).to eq(false)
+        expect(flash[:success]).to be_present
+        expect(response).to redirect_to(admins_path)
+      end
+    end
+
+    context "POST #demote_from_moderator" do
+      it "demotes a moderator to user" do
+        @request.session[:user_id] = @admin.id
+
+        @user.add_role :moderator
+        expect(@user.has_role?(:moderator)).to eq(true)
+
+        post :demote_from_moderator, params: { user_uid: @user.uid }
+
+        expect(@user.has_role?(:moderator)).to eq(false)
         expect(flash[:success]).to be_present
         expect(response).to redirect_to(admins_path)
       end

@@ -25,14 +25,19 @@
               <a><i id="edit-room" class="fa fa-edit align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
             <% end %>
           </div>
-          <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
+          <% if current_user.language != 'fa' %>
+              <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
+            <% else %>
+              <h4 class="text-left mb-6 session-recording"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
+            <% end %>
+          
           <label class="form-label"><%= t("room.invite_participants") %></label>
           <form class="form-inline">
             <div class="input-icon invite-link-input">
               <span class="input-icon-addon">
                 <i class="fas fa-link"></i>
               </span>
-              <input id="invite-url" type="text" class="form-control w-100" value="<%= request.base_url + @room.invite_path %>" readonly="">
+              <input type="text" class="form-control w-100 ltr" value="<%= request.base_url + @room.invite_path %>" readonly="">
             </div>
             <div id="copy" class="btn btn-primary mx-2">
               <i class="fas fa-copy"></i>

@@ -50,8 +50,10 @@ fa:
         ban: مسدود کردن
         delete: حذف
         demote: تنزل درجه
+        demote_from_moderator: تنزل درجه
         edit: تغییر
-        promote: ارتقا به ادمینی
+        admin_promote: ارتقا به ادمینی
+        moderator_promote: ارتقا به مدیر
         unban: خروج از مسدودیت
       table:
         authenticator: تایید کننده
@@ -75,7 +77,7 @@ fa:
   delivery_error: .هنگام ارسال ایمیل خطایی رخ داد. لطفا به یک ادمین اطلاع دهید
   docs: مستندات
   email: پست الکترونیک
-  email_sent: Your %{email_type} email has been sent! (Please check your Spam folder if you haven't received it)
+  email_sent: (ایمیل تایید حساب شما ارسال شد! (لطفا در صورت عدم دریافت ایمیل پوشه اسپم را چک کنید 
   enter_your_name: ! نام خود را وارد کنید  
   errors:
     internal:
@@ -111,6 +113,11 @@ fa:
     authentication: احراز هویت
   footer:
     powered_by: ".سامانه وبینار قسمتی از شبکه یادگیری دانشگاه تهران (شعاع) است که توسط مرکز یادگیری الکترونیکی دانشگاه تهران مدیریت می شود"
+  landing:
+    about1: ' اساتید، دانشجویان، مدیران و کارشناسان دانشگاه برای داشتن اتاق همکاری و مجازی می توانند از سامانه وبینار استفاده کنند. '
+    welcome: جلسه های ویدیویی آسان برای امور آکادمیک
+    about2: همه اعضاء تیم را به راحتی دور هم جمع کنید و جلسات خود را از قید مکان آزاد کنید.
+    about3: با واسط ساده و بدون نیاز به نرم افزار خاص از وبینار استفاده کنید.
 
   header:
     all_recordings: جلسات ضبط شده
@@ -151,21 +158,21 @@ fa:
   mailer:
     user:
       password_reset:
-        title: 'Password reset'
-        welcome: It seems like you forgot your password for %{bigbluebutton}
-        message: 'If this is true, please click the link below to reset your password:'
-        reset_link: Reset Password
-        expire: This link will expire in two hours.
-        ignore: You can safely ignore this email if you did not request a password reset.
+        title: تغییر رمز عبور
+        welcome: به نظر میرسد رمز عبور وبینارتان را فراموش کرده اید.
+        message: اگر این موضوع درست است برای تغییر رمز عبور روی لینک زیر کلیک کنید.
+        reset_link: تغییر رمز عبور
+        expire: اینک لینک دو ساعت دیگر منقضی خواهد شد.
+        ignore: اگر اقدامی جهت تغییر رمز عبورتان نکرده اید میتوانید این ایمیل را نادیده بگیرید.
       verify_email:
-        welcome: Welcome to your personal space, %{name}!
-        success: Leveraging %{bigbluebutton}, you can create your own rooms to host sessions and collaborate with others.
-        username: Your username is %{email}.
-        verify: To verify your account, just click the button below.
-        verify_text: 'To verify your account, just follow this link: %{url}'
-        verify_link: Verify Account
-        thanks: Thanks for joining and have a great day!
-  max_concurrent: The maximum number of concurrent sessions allowed has been reached!
+        welcome: .به وبینار خوش آمدید %{name}
+        success: .با استفاده از وبینار میتوانید در جلسات ویدیویی آنلاین شرکت کنید
+        username: .است %{email} نام کاربری شما
+        verify: جهت تایید حسابتان روی لینک زیر کلیک کنید.
+        verify_text: ' %{url} :برای تایید حساب خود روی لینک زیر کلیک کنید'
+        verify_link: تایید حساب
+        thanks: .تشکر بابت عضویت و روز خوبی داشته باشید
+  max_concurrent: .به حداکثر جلسات همزمان مجاز رسیده اید
 
   ldap_error: نمیتوانیم به سرور احراز هویت متصل شویم. لطفا تنظیمات وارد شده در فایل env را بررسی کنید.
   login: ورود
@@ -177,10 +184,10 @@ fa:
       not_blank: .نام اتاق نمیتواند خالی باشد
       title: .یک اتاق جدید ایجاد کنید
     delete_account:
-      confirm: آیا واقعا میخواهید حساب کاربری خود را حذف کنید؟
-      delete: .مطمينم.حساب کاربریم را حذف کنید
-      keep: .میخواهم حساب کاربریم را نگه دارم
-      warning: .این تصمیم غیر قابل بازگشت است. شما دیگر قادر نخواهید بود که به داده هایتان دسترسی داشته باشید
+      confirm: آیا واقعا میخواهید این حساب کاربری را حذف کنید؟
+      delete: .مطمينم.حساب کاربری را حذف کنید
+      keep: .میخواهم حساب کاربری را نگه دارم
+      warning: این تصمیم غیر قابل بازگشت است یعنی دیگر قادر نخواهید بود که به داده های این حساب دسترسی داشته باشید
     delete_room:
       confirm: "آیا واقعا میخواهید اتاق %{room} را حذف کنید"
       delete: مطمينم. میخواهم اتاق را حذف کنم
@@ -188,7 +195,7 @@ fa:
       warning: شما قادر نخواهید بود تا مجددا به اطلاعات این اتاق دسترسی پیدا کنید
     login:
       or: یا
-      with: "از طریق%{provider}"
+      with: " از طریق %{provider}"
       forgot_password: رمز عبورتان را فراموش کرده اید؟
     rename_recording:
     room_settings:
@@ -223,7 +230,7 @@ fa:
     update: به روز رسانی رمز عبور
   roles:
     administrator: ادمین
-    moderator: کاربر اتاق دار
+    moderator: مدیر
     banned: مسدود شده
     super_admin: ادمین اصلی
     user: کاربر
@@ -260,7 +267,7 @@ fa:
     owner: مالك
     no_sessions: این اتاق هنوز جلسه ای نداشته است
     recordings: ضبط
-    sessions: جلسات
+    sessions: اتاق
     settings: تنظیمات
     start: آغاز
     unavailable: .این اتاق در حال حاضر در دسترس نیست زیرا ایمیل سازنده تایید نشده است
@@ -279,9 +286,9 @@ fa:
       subtitle: اطلاعات حساب کاربری خود را به روز رسانی کنید
       title: مشخصات کاربری
     delete:
-      button: بله میخواهم حساب کاربریم را حذف کنم
-      disclaimer: این تصمیم بازگشت پذیر نخواهد بود. همه اطلاعات مربوط به تنظیمات اتاق ها و محتوی های ضبط شده شما حذف خواهند شد
-      subtitle: "حساب کاربری شما به صورت کامل حذف خواهد شد"
+      button: بله میخواهم این حساب کاربری را حذف کنم
+      disclaimer: این تصمیم بازگشت پذیر نخواهد بود. همه اطلاعات مربوط به تنظیمات اتاق ها و محتوی های ضبط شده این اکانت حذف خواهند شد
+      subtitle: "حساب کاربری به صورت کامل حذف خواهد شد"
       title: حذف حساب کاربری
     design:
       not_supported: شخصی سازی فعلا پیاده سازی نشده است
@@ -291,7 +298,7 @@ fa:
       confirmation: تایید رمز عبور
       new: رمز عبور جدید
       old: رمز عبور قدیمی
-      subtitle: غير كلمة السر الخاصة بك
+      subtitle: رمز عبور خود را تغییر دهید
       title: رمز عبور
     title: تنظیمات
   search: جست و جو
@@ -300,7 +307,7 @@ fa:
     password_confirm: تایید رمز عبور
     subtitle: یک حساب کاربری بسازید
     title: ایجاد حساب
-    with: "ایجاد حساب از طریق %{provider}"
+    with: "ایجاد حساب از طریق %{provider} "
   terms:
     accept: میپذیرم
     accept_existing: من قوانین و شرایط را قبول دارم

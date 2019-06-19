@@ -18,7 +18,7 @@
     <div class="col col-lg-6 offset-lg-3">
       <div class="card">
         <div class="card-header background">
-          <h4 class="mt-2"><%= t("login_title") %></h4>
+          <h4 class="mt-2 ml-auto mr-auto"><%= t("login_title") %></h4>
         </div>
         <div class="card-body background">
           <% unless iconset_providers.length.zero? %>
@@ -57,7 +57,11 @@
             </div>
             <% if Rails.configuration.enable_email_verification %>
               <div class="form-group">
-                <div class="input-icon">
+                <% if current_user && current_user.language != 'fa' %>
+                  <div class="input-icon">
+                <% else %>
+                  <div class="input-icon text-right">
+                <% end %> 
                   <%= link_to t("modal.login.forgot_password"), new_password_reset_path %>
                 </div>
               </div>

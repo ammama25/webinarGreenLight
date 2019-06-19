@@ -56,7 +56,7 @@ class User < ApplicationRecord
       # Provider is the customer name if in loadbalanced config mode
       
       auth['uid'] = auth['extra']['utid']
-      # puts(auth)
+      puts(auth)
       provider = auth['provider'] == "bn_launcher" ? auth['info']['customer'] : auth['provider']
       find_or_initialize_by(social_uid: auth['uid'], provider: provider).tap do |u|
         u.name = auth_name(auth) unless u.name
@@ -77,7 +77,7 @@ class User < ApplicationRecord
       when :microsoft_office365
         auth['info']['display_name']
       when :cas
-        auth['extra']['givenName']
+        auth['extra']['sn']
       else
         auth['info']['name']
       end
@@ -97,7 +97,12 @@ class User < ApplicationRecord
     end
 
     def auth_email(auth)
-      auth['info']['email']
+      case auth['provider']
+      when :cas
+        auth['extra']['mail']
+      else
+        auth['info']['email']
+      end
     end
 
     def auth_image(auth)
