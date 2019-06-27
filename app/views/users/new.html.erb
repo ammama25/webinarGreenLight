@@ -20,7 +20,7 @@
         <div class="card-header background">
           <h4 class="mt-2 mr-auto ml-auto"><%= t("signup.subtitle") %></h4>
         </div>
-        <% if current_user && current_user.language != 'fa' %>
+        <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
           <div class="card-body background form">
         <% else %>
           <div class="card-body background form text-right">

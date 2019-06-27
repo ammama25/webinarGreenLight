@@ -118,8 +118,9 @@ class RoomsController < ApplicationController
       if current_user
         redirect_to @room.join_path(current_user.name, opts, current_user.uid)
       else
-        join_name = params[:join_name] || params[@room.invite_path][:join_name]
-        redirect_to @room.join_path(join_name, opts)
+        redirect_to unauthorized_path
+        # join_name = params[:join_name] || params[@room.invite_path][:join_name]
+        # redirect_to @room.join_path(join_name, opts)
       end
     else
       # They need to wait until the meeting begins.

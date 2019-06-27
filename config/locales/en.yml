@@ -17,6 +17,48 @@
 # Locale.
 
 en:
+  support:
+    user: user
+    email: email
+    title: change the access level from the user to the admin
+    reason: reason
+    role: role
+    field: field
+    professor: professor
+    teacher_assistant: teacher assistant
+    academic_staff: academic staff
+    staff: staff
+    student: student
+  help:
+    overview:
+      title: what is webinar?
+      text: The webinar is part of the University of Tehran learning network that designed to hold online classes and video conferences.
+      user_models: we have two type of end users in webinar
+      users:
+        name: users
+        feature1: Authentication via cas or the ability to create an account
+        feature2: An interface to view, manage, and share recordings
+      moderators: 
+        name: moderators
+        feature1: they have all featurs of users
+        feature2: A default personal room with a permanent invite URL
+        feature3: The ability to create multiple rooms
+    profile: 
+      title: profile
+      text: users can update their account information at any time, including changing their password, profile image, and language for webinar
+    rooms: 
+      title: rooms
+      text: To invite someone to join your room, all you have to do is give them the invite URL on the room page. Once they follow the URL, they’ll be presented with an invitation to join your room. If the user doesn’t have a webinar account, they must create an account first.
+    recordings: 
+      title: recordings
+      text: On your room page, all recordings for that room will be listed at the bottom under the recordings subtitle. This table contains information about the recording, as well as its recorded formats. You can click on any of these formats and you’ll open the recording in a new tab.
+      types:
+        text: Each recording has a visibility associated with it, which can be changed by clicking on it in the recordings table. By default, it is set to unlisted.
+        public: "Public: everyone can view it if they have the room link."
+        unlisted: "Unlisted: only users who have the recording link can view it."
+      managing:  you have the ability to delete a recording or mail a recording to a friend or change the name of a recording. 
+
+      
   activerecord:
     attributes:
       user:
@@ -76,7 +118,7 @@ en:
   delivery_error: An error occured during email delivery. Please contact an administrator!
   docs: Documentation
   email: Email
-  email_sent: Your %{email_type} email has been sent! (Please check your Spam folder if you haven't received it)
+  email_sent: email has been sent! (Please check your Spam folder if you haven't received it)
   enter_your_name: Enter your name!
   errors:
     internal:

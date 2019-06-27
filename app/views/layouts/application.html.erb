@@ -53,12 +53,13 @@
 
         return value ? value : "";
       }
+
     </script>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/150px-University_of_Tehran_logo.svg.png" sizes="16x16">
   </head>
 
 
-  <% if current_user && current_user.language != 'fa' %>
+  <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default'%>
     <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
   <% else %>
     <body class="app-background body_fa" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">

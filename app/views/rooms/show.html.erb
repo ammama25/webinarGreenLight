@@ -25,7 +25,7 @@
               <a><i id="edit-room" class="fa fa-edit align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
             <% end %>
           </div>
-          <% if current_user.language != 'fa' %>
+          <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
               <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>
             <% else %>
               <h4 class="text-left mb-6 session-recording"><%= @room.sessions %> <%= t("room.sessions") %> | <%= @recordings.length %> <%= t("room.recordings") %></h4>

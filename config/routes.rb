@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   # Redirect to terms page
   match '/terms', to: 'users#terms', via: [:get, :post]
 
+  # help and support
+  get '/help', to: 'users#help', as: :help
+  get '/support', to: 'support_email#support', as: :support
+
   # Admin resouces
   resources :admins, only: [:index]
 
@@ -52,6 +56,11 @@ Rails.application.routes.draw do
   scope '/themes' do
     get '/primary', to: 'themes#index', as: :themes_primary
   end
+
+  #support email
+  post '/support_email', to: 'support_email#create', as: :support_email
+  #resources :support_email, only: [:create]
+
 
   # Password reset resources.
   resources :password_resets, only: [:new, :create, :edit, :update]

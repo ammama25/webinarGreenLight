@@ -22,7 +22,7 @@
             <div class="col-7 mt-2">
               <h4><%= setting_title %></h4>
             </div>
-            <% if current_user && current_user.language != 'fa' %>
+            <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
               <div class="col-5 ">
             <% else %>
               <div class="col-5 float-right">
@@ -46,7 +46,7 @@
             </div>
           <% else %>
             <div class="col-12 mt-2 ">
-              <% if current_user && current_user.language != 'fa' %>
+              <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
                 <h4 class="text-primary "><%= setting_title %></h4>
               <% else %>
                 <h4 class="text-primary float-right"><%= setting_title %></h4>

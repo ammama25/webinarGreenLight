@@ -17,4 +17,12 @@ class UserMailerPreview < ActionMailer::Preview
     url = "http://example.com" + "/u/verify/confirm/" + user.uid
     UserMailer.verify_email(user, url)
   end
+
+  def support_email
+    user = User.first
+    role = 'استاد'
+    field = 'فناوری'
+    desc = 'میخوام'
+    UserMailer.support_email(user, role, field, desc)
+  end  
 end

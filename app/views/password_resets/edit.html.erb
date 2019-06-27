@@ -13,30 +13,38 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<div class="container">
-  <div class="row pt-7">
-    <div class="col col-4 offset-4">
-      <div class="card">
-        <div class="card-header background">
-          <h4 class="mt-2"><%= t("reset_password.subtitle") %></h4>
-        </div>
-        <div class="card-body background">
-          <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+<% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
+  <div class="container">
+<% else %>
+  <div class="container text-right">
+<% end %>
+    <div class="row pt-7">
+      <div class="col col-4 offset-4">
+         <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
+            <div class="card">
+          <% else %>
+            <div class="cardrtl">
+          <% end %> 
+          <div class="card-header background">
+            <h4 class="mt-2"><%= t("reset_password.subtitle") %></h4>
+          </div>
+          <div class="card-body background">
+            <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
 
-            <%= hidden_field_tag :email, @user.email %>
+              <%= hidden_field_tag :email, @user.email %>
 
-            <%= f.label t('reset_password.password'), class: "form-label" %>
-            <%= f.password_field :password, class: 'form-control' %>
-            <br>
+              <%= f.label t('reset_password.password'), class: "form-label" %>
+              <%= f.password_field :password, class: 'form-control' %>
+              <br>
 
-            <%= f.label t('reset_password.confirm'), class: "form-label" %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-            <br>
+              <%= f.label t('reset_password.confirm'), class: "form-label" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+              <br>
 
-            <%= f.submit t('reset_password.update'), class: "btn btn-primary" %>
-          <% end %>
+              <%= f.submit t('reset_password.update'), class: "btn btn-primary" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

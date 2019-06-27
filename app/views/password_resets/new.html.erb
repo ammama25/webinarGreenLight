@@ -12,24 +12,31 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
-
-<div class="container">
-  <div class="row pt-7">
-    <div class="col col-4 offset-4">
-      <div class="card">
-        <div class="card-header background">
-          <h4 class="mt-2"><%= t("forgot_password.subtitle") %></h4>
-        </div>
-        <div class="card-body background">
-          <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-            <%= f.label t("forgot_password.email"), class: "form-label" %>
-            <%= f.email_field :email, class: "form-control" %>
-            <br>
-      
-            <%= f.submit t("forgot_password.submit"), class: "btn btn-primary" %>
-          <% end %>
+<% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
+  <div class="container">
+<% else %>
+  <div class="container text-right">
+<% end %>
+    <div class="row pt-7">
+      <div class="col col-4 offset-4">
+        <div class="card">
+          <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
+            <div class="card-header background">
+          <% else %>
+            <div class="card-header background rtl">
+          <% end %>      
+              <h4 class="mt-2"><%= t("forgot_password.subtitle") %></h4>
+            </div>
+            <div class="card-body background">
+              <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+                <%= f.label t("forgot_password.email"), class: "form-label" %>
+                <%= f.email_field :email, class: "form-control" %>
+                <br>
+          
+                <%= f.submit t("forgot_password.submit"), class: "btn btn-primary" %>
+              <% end %>
+            </div>
         </div>
       </div>
     </div>
   </div>
-</div>

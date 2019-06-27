@@ -166,6 +166,10 @@ class User < ApplicationRecord
     UserMailer.verify_email(self, url).deliver
   end
 
+  def send_support_email(role, field, desc)
+    UserMailer.support_email(self, role, field, desc).deliver
+  end
+
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token

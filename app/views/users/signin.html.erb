@@ -57,7 +57,7 @@
             </div>
             <% if Rails.configuration.enable_email_verification %>
               <div class="form-group">
-                <% if current_user && current_user.language != 'fa' %>
+                <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
                   <div class="input-icon">
                 <% else %>
                   <div class="input-icon text-right">

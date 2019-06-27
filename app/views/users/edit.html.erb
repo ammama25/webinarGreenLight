@@ -18,7 +18,7 @@
 
   <div class="row">
     <div class="col-lg-3 mb-4">
-      <% if current_user && current_user.language != 'fa' %>
+      <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
         <div class="list-group list-group-transparent mb-0 ">
       <% else %>
         <div class="list-group list-group-transparent mb-0 text-right rtl">

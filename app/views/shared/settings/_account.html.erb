@@ -15,7 +15,7 @@
 
 <%= form_for @user, url: update_user_path, method: :patch do |f|  %>
   <%= hidden_field_tag :setting, "account" %>
-  <% if current_user && current_user.language != 'fa' %>
+  <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
     <div class="form-group form ltr">
   <% else%>
     <div class="form-group form text-right">
@@ -57,7 +57,7 @@
       </div>
     </div>
   <div class="card-footer">
-    <% if current_user && current_user.language != 'fa' %>
+    <% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
       <%= f.submit t("update"), class: "btn btn-primary " %>
     <% else%>
       <%= f.submit t("update"), class: "btn btn-primary float-right" %>

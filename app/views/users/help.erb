@@ -1,0 +1,38 @@
+<% if current_user && current_user.language != 'fa' &&  current_user.language != 'default' %>
+    <div class="container">
+<% else %>
+    <div class="container rtl text-right">
+<% end %>
+        <div class=page-header>
+            <h2><%= t("help.overview.title") %></h2>
+        </div>
+        <p><%= t("help.overview.text") %></p>
+        <p><%= t("help.overview.user_models")%></p>
+
+        <h4><%= t("help.overview.users.name")%></h4>
+        <ul>
+          <li><%= t("help.overview.users.feature1") %></li>
+          <li><%= t("help.overview.users.feature2") %></li>
+        </ul>
+
+        <h4><%= t("help.overview.moderators.name")%></h4>
+
+        <ul>
+          <li><%= t("help.overview.moderators.feature1") %></li>
+          <li><%= t("help.overview.moderators.feature2") %></li>
+          <li><%= t("help.overview.moderators.feature3") %></li>
+        </ul>
+    <h3 ><%= t("help.profile.title") %></h3>
+    <p><%= t("help.profile.text") %></p>
+
+    <h3 ><%= t("help.rooms.title") %></h3>
+    <p><%= t("help.rooms.text") %></p>
+
+    <h3 ><%= t("help.recordings.title") %></h3>
+    <p><%= t("help.recordings.text") %></p>
+    <p><%= t("help.recordings.types.text") %></p>
+    <p><%= t("help.recordings.types.public") %></p>
+    <p><%= t("help.recordings.types.unlisted") %></p>
+    <p><%= t("help.recordings.managing") %></p>
+
+</div>
