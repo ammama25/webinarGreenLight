@@ -1,0 +1,17 @@
+1. installing ruby on rails:
+   https://gorails.com/setup/ubuntu/16.04 
+
+2. mkdir greenlight
+   cd greenlight
+   git init
+   git remote add origin https://github.com/dadras/utec.git
+   git pull origin master
+
+3.sudo bundle install
+
+4.RAILS_ENV=production bundle exec rake db:setup
+  RAILS_ENV=production bundle exec rake db:migrate
+  RAILS_ENV=production bundle exec rake assets:precompile
+
+5.rails server --port=5000 --env=production --daemon
+
